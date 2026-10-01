@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using SweetCake.Data;
 using SweetCake.Models;
 using System.Web.UI.HtmlControls;
 
@@ -14,8 +13,8 @@ namespace SweetCake
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            DuLieuSanPham sanPhamTrangSanPham = new DuLieuSanPham();
-            List<SanPhamBanh> danhSachSanPhamBanh = sanPhamTrangSanPham.sanPhams;
+            
+            List<SanPhamBanh> danhSachSanPhamBanh = (List<SanPhamBanh>)Application["DanhSachSanPham"]; ;
             foreach(SanPhamBanh x in danhSachSanPhamBanh)
             {
                 HtmlGenericControl newDiv = new HtmlGenericControl("div");

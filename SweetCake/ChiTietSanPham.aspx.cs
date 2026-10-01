@@ -1,5 +1,4 @@
-﻿using SweetCake.Data;
-using SweetCake.Models;
+﻿using SweetCake.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +13,9 @@ namespace SweetCake
         protected void Page_Load(object sender, EventArgs e)
         {
             string idChiTietSanPham = Request.QueryString["id"];
-            DuLieuSanPham duLieuSanPhams = new DuLieuSanPham();
+            List<SanPhamBanh> danhSachSanPham = (List<SanPhamBanh>)Application["DanhSachSanPham"];
             SanPhamBanh banhTimThay = null;
-            foreach (SanPhamBanh x in duLieuSanPhams.sanPhams)
+            foreach (SanPhamBanh x in danhSachSanPham)
             {
                 if(x.maBanh == idChiTietSanPham)
                 {
